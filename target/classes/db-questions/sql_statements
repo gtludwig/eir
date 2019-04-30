@@ -1,0 +1,11 @@
+
+SELECT * FROM eir.family fam WHERE fam.birthdate BETWEEN '1987-01-01' AND '1987-12-31' ORDER BY fam.last_name ASC;
+
+
+SELECT avg(con.salary) FROM eir.employee emp inner join eir.family fam ON fam.employee_id = emp.id inner join eir.contract con on con.employee_id = emp.id
+
+
+SELECT max(con.salary) FROM eir.employee emp
+inner join eir.family fam ON fam.employee_id = emp.id
+inner join eir.contract con on con.employee_id = emp.id
+where fam.employee_id <> emp.id
